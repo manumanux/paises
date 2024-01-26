@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <title>paises</title>
+</head>
+
+<style>
+    .highlighted {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>paises</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <p>Mostrando <strong id="cantidad-paises">...</strong> paises</p>
+        </div>
+        <form id="formularioBuscar">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-primary" type="submit" id="boton-buscar">
+                        Buscar
+                    </button>
+                </div>
+                <div class="col-9">
+                    <input id="buscar" type="text" class="form-control" placeholder="" aria-label=""
+                        aria-describedby="basic-addon1" required />
+                    <div class="dropdown">
+                        <ul id="sugerencias" class="dropdown-menu" aria-labelledby="searchInput"></ul>
+                    </div>
+                    <div class="error-message" id="errorMensaje"></div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="indice">
+                    <p>Cargando...</p>
+                    <!-- -->
+                </div>
+            </div>
+            <div class="col" id="pais">
+                <div id="ayuda">
+                    <p>Seleccioná un país para ver su información</p>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" id="banderaPais-imagen" />
+                    <div class="card-body">
+                        <h5 class="card-title" id="pais-nombre"></h5>
+                        <p class="card-text" id="banderaPais-descripcion">...</p>
+                    </div>
+                    <ul class="list-group list-group-flush" id="caracteristicas-paises"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/index.js"></script>
+    <script>
+        document
+            .getElementById('formularioBuscar')
+            .addEventListener('submit', function (event) {
+                event.preventDefault()
+            })
+    </script>
+</body>
+
+</html>
